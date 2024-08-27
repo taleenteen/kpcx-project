@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-function Navbar() {
+function ContactNav() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -62,41 +62,14 @@ function Navbar() {
               </Link>
             </div>
             <div className="hidden pr-14 lg:gap-14 lg:flex gap-6 md:gap-9 items-center">
-              <a
-                href="#About"
-                className="text-gray-800 group font-medium hover:text-blue1 transition-all duration-300 ease-in-out hover:drop-shadow-2xl"
-                onClick={handleSmoothScroll}
-              >
-                ABOUT
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue1"></span>
-              </a>
-
-              <a
-                href="#Services"
-                className="text-gray-800 group font-medium hover:text-blue1 transition-all duration-300 ease-in-out hover:drop-shadow-2xl"
-                onClick={handleSmoothScroll}
-              >
-                SERVICES
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue1"></span>
-              </a>
-
-              <a
-                href="#Channels"
-                className="text-gray-800 group font-medium hover:text-blue1 transition-all duration-300 ease-in-out hover:drop-shadow-2xl"
-                onClick={handleSmoothScroll}
-              >
-                CHANNELS
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue1"></span>
-              </a>
-
-              <a
-                href="#Faq"
-                className="text-gray-800 group font-medium hover:text-blue1 transition-all duration-300 ease-in-out hover:drop-shadow-2xl"
-                onClick={handleSmoothScroll}
-              >
-                FAQ
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue1"></span>
-              </a>
+              <div className="hidden group lg:flex h-20 items-center justify-center min-w-[133px] rounded-full duration-500 bg-gradient-to-tl from-blue2 via-indigo-500 to-blue1 bg-size-200 bg-pos-0 hover:bg-pos-100">
+                <Link href="/contact" passHref>
+                  <button className="text-white font-medium text-center">
+                    Contact Us
+                    <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
+                  </button>
+                </Link>
+              </div>
             </div>
             <Link
               href="/contact"
@@ -106,18 +79,10 @@ function Navbar() {
               <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue1"></span>
             </Link>
           </div>
-          <div className="hidden group lg:flex h-20 items-center justify-center min-w-[133px] rounded-full duration-500 bg-gradient-to-tl from-blue2 via-indigo-500 to-blue1 bg-size-200 bg-pos-0 hover:bg-pos-100">
-            <Link href="/contact" passHref>
-              <button className="text-white font-medium text-center">
-                Contact Us
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-white"></span>
-              </button>
-            </Link>
-          </div>
         </div>
       </div>
     </nav>
   );
 }
 
-export default Navbar;
+export default ContactNav;

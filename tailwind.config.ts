@@ -15,19 +15,30 @@ const config: Config = {
       },
       colors: {
         gray1: '#E2E2E2',
-        blue1: '#3e17ff',
-      },
-      keyframes: {
-        scroll: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(calc(-250px * 7))' }, // Adjust according to the number of slides
-        },
+        blue1: '#6C3BAA',
+        blue2: '#3e17ff',
       },
       animation: {
-        scroll: 'scroll 40s linear infinite',
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+      },
+      keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' }, // Adjust to fit content width
+        },
       },
       width: {
-        'calc-250x14': 'calc(250px * 14)', // Adjust according to the number of slides
+        'calc-250x14': 'calc(100px * 14)', // Adjust according to the number of slides
+      },
+      boxShadow: {
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+      },
+      backgroundSize: {
+        'size-200': '200% 200%',
+      },
+      backgroundPosition: {
+        'pos-0': '0% 0%',
+        'pos-100': '100% 100%',
       },
     },
   },

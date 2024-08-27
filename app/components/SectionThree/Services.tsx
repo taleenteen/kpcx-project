@@ -85,10 +85,10 @@ const ServiceSection = () => {
               <img
                 src={service.icon}
                 alt={service.title}
-                className="rounded-md mb-2"
+                className="rounded-md mb-2 w-[75px] h-[75px]"
               />
               <h3
-                className={`text-2xl font-semibold mt-3 ${
+                className={`text-2xl font-semibold mt-28 ${
                   selectedService.id === service.id
                     ? "text-gray-800"
                     : "text-white"

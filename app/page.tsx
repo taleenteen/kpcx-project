@@ -1,43 +1,46 @@
-import Image from "next/image";
-import ChannelManagementSection from "./components/firstSection";
 import FramerSection from "./components/Framer";
 import ShowClients from "./components/ShowClients";
 import Info from "./components/SectionTwo/Info";
-import VisualMap from "./components/SectionFour/VisualMap";
+import ServiceMap from "./components/SectionFour/ServiceMap";
 import ServiceSection from "./components/SectionThree/Services";
 import ShowCase from "./components/SectionFive/Showcase";
 import Contact from "./components/SectionSeven/Contact";
 import Accordion from "./components/SectionSix/Accordion";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
-    <div>
-      {/* <section className="p-4">
-        <div className="flex items-center justify-center min-h-screen">
+    <div className="scroll-smooth">
+      <Navbar />
+      <section className="p-4 mt-24">
+        <div className="flex items-center justify-center">
           <FramerSection />
         </div>
-      </section> */}
+      </section>
 
-      <section className="mt-[100px]">
+      <section id="About" className="bg-gradient-to-b from-white to-blue1">
         <Info />
       </section>
-      <section className="bg-blue1">
+      <section id="Services" className="bg-blue1">
         <ServiceSection />
       </section>
 
-      {/* <section className="mt-5">
-        <VisualMap />
-      </section> */}
+      <section
+        id="Channels"
+        className="bg-blue2 md:bg-white md:bg-gradient-to-b md:from-white md:to-white  bg-gradient-to-b from-blue1 to-blue2"
+      >
+        <ServiceMap />
+      </section>
 
       <section>
         <ShowCase />
       </section>
 
-      <section>
+      <section className="mb-12">
         <ShowClients />
       </section>
 
-      <section>
+      <section id="Faq">
         <Accordion />
       </section>
 

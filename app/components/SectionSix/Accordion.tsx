@@ -48,7 +48,7 @@ const Accordion: React.FC = () => {
               onClick={() => toggleAccordion(index)}
               className="flex justify-start items-center w-full"
             >
-              <span className="text-white text-2xl font-bold flex-1 text-left">
+              <span className="text-white text-2xl font-bold flex-1 text-left hover:text-black transition-all duration-300">
                 {item.title}
               </span>
 

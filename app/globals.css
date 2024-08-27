@@ -8,6 +8,15 @@
   }
 }
 
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.border-br-white {
+  border-bottom: 4px solid white; /* Adjust thickness as needed */
+  border-right: 4px solid white; /* Adjust thickness as needed */
+}
+
 :root {
   --swiper-navigation-color: #3e17ff;
 }

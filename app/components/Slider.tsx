@@ -27,9 +27,8 @@ const InfiniteScrollLogos: React.FC = () => {
       <div className="h-[100px] rounded-2xl w-1/2">
         <Marquee
           gradient
-          gradientWidth={20}
           pauseOnHover={true}
-          className=" rounded-2xl overflow-hidden"
+          className=" rounded-2xl py-3 overflow-hidden"
         >
           {images.map((image, index) => (
             <div

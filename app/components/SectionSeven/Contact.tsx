@@ -3,12 +3,12 @@ import Link from "next/link";
 
 const Contact = () => {
   const img =
-    "https://plus.unsplash.com/premium_photo-1661284828052-ea25d6ea94cd?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   return (
     <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
       <div
-        className="relative bg-cover bg-center h-64 rounded-3xl overflow-hidden" // เพิ่ม overflow-hidden
+        className="relative bg-cover bg-center h-72 rounded-3xl overflow-hidden bg-fixed " // เพิ่ม overflow-hidden
         style={{ backgroundImage: `url(${img})` }}
       >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
