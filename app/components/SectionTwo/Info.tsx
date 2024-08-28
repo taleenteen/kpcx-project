@@ -5,12 +5,12 @@ const Info: React.FC = () => {
   const topSectionData = [
     {
       src: "/WhyKPCX/revenue.png",
-      text: "average monthly orders",
-      value: "2m+",
+      text: "Revenue",
+      value: "600%",
     },
-    { src: "/WhyKPCX/web-traffic.png", text: "web traffic", value: "700+" },
-    { src: "/WhyKPCX/deal.png", text: "deals", value: "100+" },
-    { src: "/WhyKPCX/viewer.png", text: "viewers", value: "7+" },
+    { src: "/WhyKPCX/web-traffic.png", text: "Visitors", value: "900%" },
+    { src: "/WhyKPCX/deal.png", text: "Buyers", value: "900%" },
+    { src: "/WhyKPCX/viewer.png", text: "Page views", value: "900%" },
   ];
 
   // Data for the bottom section

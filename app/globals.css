@@ -7,7 +7,9 @@
     animation-play-state: paused;
   }
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .animate-scroll {
   animation: scroll 40s linear infinite;
 }

@@ -18,12 +18,11 @@ export default function BackgroundWithButton() {
         <div className="flex flex-col items-start justify-center h-full p-8 drop-shadow-2xl">
           <div>
             <h1 className="text-5xl font-bold text-white">
-              Integrated Channel <br /> Management Services
+              Make E-commerce <br /> simple and accesible
             </h1>
             <p className="mt-4 text-xl font-medium text-white">
-              Unlock the power of unified channel management with SIRCLO <br />
-              Commerce, the ultimate solution for businesses across industries
-              looking <br /> to conquer the online marketplace.
+              Unlock your E-commerce potential with KPCX&#44; a one-stop <br />
+              service solution to all things E-commerce.
             </p>
           </div>
         </div>
@@ -32,7 +31,7 @@ export default function BackgroundWithButton() {
       <div className="absolute w-[60px] h-[60px] bg-transparent bottom-0 right-[215px] rounded-[30px] z-3 shadow-[30px_30px_0px_rgba(255,255,255,1)]"></div>
       <div className="absolute w-[60px] h-[60px] bg-transparent bottom-24 right-0 rounded-[30px] z-3 shadow-[30px_30px_0px_rgba(255,255,255,1)]"></div>
       <div className="absolute w-[60px] h-[60px] bg-white bottom-0 right-0 rounded-[30px] z-1 shadow-[30px_30px_0px_rgba(255,255,255,1)]"></div>
-      <div className="absolute bottom-0 right-0 h-[96px] w-[215px] z-2 bg-white rounded-tl-3xl">
+      <div className="absolute bottom-0 right-0 h-[96px] w-[215px] z-2 bg-white rounded-tl-[50px]">
         {" "}
         <div className="flex justify-center items-center h-full">
           <Link href="/contact" passHref>
