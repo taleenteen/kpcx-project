@@ -189,5 +189,6 @@ const ServiceSection: React.FC = () => {
     </div>
   );
 };
+ServiceCard.displayName = "ServiceCard";
 
 export default ServiceSection;
