@@ -7,7 +7,7 @@ import sliderData from "../../data/slider-data.json"; // Adjust path as needed
 const Showcase: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = sliderData.length;
-
+  //Handle buttons
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
   };

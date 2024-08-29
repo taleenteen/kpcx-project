@@ -27,7 +27,7 @@ export default function ContactForm() {
   });
 
   const [result, setResult] = useState("");
-
+  // Set rules
   useEffect(() => {
     const nameRegex = /^[a-zA-Zก-๙\s]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -1,14 +1,22 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 
-const services = [
+interface Service {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  icon: string;
+}
+
+const services: Service[] = [
   {
     id: 1,
     title: "Store Operation",
     description:
       "Our team ensures efficient store setup and campaign launches, enhancing your online presence through targeted digital marketing and streamlined operational support.",
     image:
-      "https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/10-intelligent-dog-breeds/golden-retriever-tongue-out.jpg",
+      "https://plus.unsplash.com/premium_photo-1687568576764-eb4cb9bad320?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "/Services/data-collection.png",
   },
   {
@@ -17,7 +25,7 @@ const services = [
     description:
       "We develop comprehensive marketing strategies that align with your business goals and drive customer engagement.",
     image:
-      "https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg",
+      "https://images.unsplash.com/photo-1580795479172-6c29db0fd7c4?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "/Services/planning.png",
   },
   {
@@ -26,7 +34,7 @@ const services = [
     description:
       "Gain valuable insights into customer behavior and market trends through our advanced analytics services.",
     image:
-      "https://i.pinimg.com/736x/0c/23/fa/0c23fa70d933c44d75ed8bd98eb1e3ca.jpg",
+      "https://plus.unsplash.com/premium_photo-1661434270550-fc467725a2ed?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "/Services/gear.png",
   },
   {
@@ -34,30 +42,57 @@ const services = [
     title: "Fulfillment Service",
     description:
       "We create high-quality content that resonates with your audience and amplifies your brand message.",
-    image: "https://www.rover.com/blog/wp-content/uploads/black-dog-min.jpg",
+    image:
+      "https://plus.unsplash.com/premium_photo-1661809792135-71b20e0fca24?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: "/Services/fulfillment.png",
   },
 ];
 
-const ServiceSection = () => {
-  const [selectedService, setSelectedService] = useState(services[0]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+interface ServiceCardProps {
+  service: Service;
+  selected: boolean;
+  onClick: () => void;
+}
+// Use service memo for protect re-render
+const ServiceCard: React.FC<ServiceCardProps> = React.memo(
+  ({ service, selected, onClick }) => (
+    <div
+      onClick={onClick}
+      className={`cursor-pointer border rounded-3xl p-3 shadow-md hover:shadow-lg transition-all duration-300 ${
+        selected
+          ? "border-blue-400 bg-blue-50 text-blue1"
+          : "border-gray-200 text-black hover:bg-blue-600"
+      }`}
+    >
+      <img
+        src={service.icon}
+        alt={service.title}
+        className="rounded-md mb-2 w-[75px] h-[75px]"
+      />
+      <h3
+        className={`text-2xl font-semibold mt-28 ${
+          selected ? "text-gray-800" : "text-white"
+        }`}
+      >
+        {service.title}
+      </h3>
+    </div>
+  )
+);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => {
-      const newIndex = (prevIndex + 1) % services.length;
-      setSelectedService(services[newIndex]);
-      return newIndex;
-    });
-  };
+const ServiceSection: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const selectedService = useMemo(() => services[currentIndex], [currentIndex]);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => {
-      const newIndex = (prevIndex - 1 + services.length) % services.length;
-      setSelectedService(services[newIndex]);
-      return newIndex;
-    });
-  };
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + services.length) % services.length
+    );
+  }, []);
 
   return (
     <div className="max-w-screen-xl mx-auto py-8 px-1 lg:py-16 lg:px-6">
@@ -67,40 +102,17 @@ const ServiceSection = () => {
         </h1>
       </div>
       <div className="flex flex-col md:flex-row gap-8 p-4">
-        {/* Left Side: Service Cards (Hidden on small screens) */}
         <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-1/2">
           {services.map((service) => (
-            <div
+            <ServiceCard
               key={service.id}
-              onClick={() => {
-                setSelectedService(service);
-                setCurrentIndex(services.indexOf(service));
-              }}
-              className={`cursor-pointer border rounded-3xl p-3 shadow-md hover:shadow-lg transition-all duration-300 ${
-                selectedService.id === service.id
-                  ? "border-blue-400 bg-blue-50 text-blue1"
-                  : "border-gray-200 text-black hover:bg-blue-600"
-              }`}
-            >
-              <img
-                src={service.icon}
-                alt={service.title}
-                className="rounded-md mb-2 w-[75px] h-[75px]"
-              />
-              <h3
-                className={`text-2xl font-semibold mt-28 ${
-                  selectedService.id === service.id
-                    ? "text-gray-800"
-                    : "text-white"
-                }`}
-              >
-                {service.title}
-              </h3>
-            </div>
+              service={service}
+              selected={selectedService.id === service.id}
+              onClick={() => setCurrentIndex(services.indexOf(service))}
+            />
           ))}
         </div>
 
-        {/* Right Side: Selected Service Details with Navigation */}
         <div className="w-full md:w-1/2 p-4 bg-white border border-gray-200 rounded-3xl shadow-md relative ">
           <img
             src={selectedService.image}
@@ -114,13 +126,11 @@ const ServiceSection = () => {
           <p className="text-gray-700 font-semibold text-lg transition-transform duration-300 ease-in-out transform">
             {selectedService.description}
           </p>
-          {/* Pagination and Navigation Buttons */}
           <div className="flex justify-between items-center mt-4 md:hidden">
             <span className="text-blue1 text-3xl mt-7">
               {currentIndex + 1} - {services.length}
             </span>
             <div className="flex space-x-2 md:hidden">
-              {/* Previous Button */}
               <button
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
@@ -147,7 +157,6 @@ const ServiceSection = () => {
                 </svg>
               </button>
 
-              {/* Next Button */}
               <button
                 onClick={handleNext}
                 disabled={currentIndex === services.length - 1}

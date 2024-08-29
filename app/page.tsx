@@ -25,7 +25,7 @@ export default function Home() {
         <ServiceSection />
       </section>
 
-      <section id="Channels" className="">
+      <section id="Channels" className="bg-gray1">
         <ServiceMap />
       </section>
 
