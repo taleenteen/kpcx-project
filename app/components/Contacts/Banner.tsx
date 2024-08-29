@@ -10,9 +10,9 @@ function Banner() {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
+    <div className="max-w-screen-xl mx-auto mb-2 px-4 lg:mb-12 lg:px-6">
       <div
-        className="relative bg-cover bg-center h-96 w-full flex items-center justify-center rounded-3xl overflow-hidden"
+        className="relative bg-cover bg-center h-96 w-full flex items-center justify-center rounded-3xl overflow-hidden bg-fixed"
         style={{ backgroundImage: `url(${img})` }}
       >
         <div className="bg-blue1 bg-opacity-90 p-8 rounded-3xl text-center text-white">

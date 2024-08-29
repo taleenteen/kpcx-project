@@ -8,7 +8,7 @@ function ContactPage() {
   return (
     <div>
       <section className="flex justify-center">
-        <div className="h-[200px] w-[200px] hover:scale-110 transition-all duration-300">
+        <div className="h-[200px] w-[200px] hover:scale-110 transition-all duration-300 mt-4">
           <Link href="/" passHref>
             <Image
               src="/Logo.png"
