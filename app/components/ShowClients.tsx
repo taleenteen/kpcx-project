@@ -23,13 +23,13 @@ const InfiniteScrollLogos: React.FC = () => {
   ];
 
   return (
-    <section className="flex h-max-w-screen-3xl justify-center items-center w-screen">
-      <div className="h-[100px] rounded-2xl w-1/2">
+    <section className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
+      <div className="h-[100px] w-full">
         <Marquee
           gradient
           gradientWidth={20}
           pauseOnHover={true}
-          className=" rounded-2xl overflow-hidden"
+          className="overflow-hidden w-full"
         >
           {images.map((image, index) => (
             <div

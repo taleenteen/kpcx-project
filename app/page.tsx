@@ -25,10 +25,7 @@ export default function Home() {
         <ServiceSection />
       </section>
 
-      <section
-        id="Channels"
-        className="bg-blue2 md:bg-white md:bg-gradient-to-b md:from-white md:to-white  bg-gradient-to-b from-blue1 to-blue2"
-      >
+      <section id="Channels" className="">
         <ServiceMap />
       </section>
 
