@@ -36,12 +36,13 @@ function Navbar() {
       <div className="flex justify-center">
         <div className="flex align-middle flex-row gap-[24px] py-6 px-14 w-full max-w-[1450px]">
           <div className="flex flex-grow items-center justify-between bg-white rounded-full">
-            <div className="h-[80px] w-[150px]">
+            <div className="h-[80px] w-[150px] flex items-center justify-center">
               <Link href="/" passHref>
                 <Image
                   src="/Logo.png"
                   alt="Logo"
-                  width={150}
+                  layout="intrinsic"
+                  width={80} // Use the height you want for the image
                   height={80}
                   className="object-contain"
                 />
