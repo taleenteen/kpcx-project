@@ -19,16 +19,20 @@ const config: Config = {
         blue2: '#3e17ff',
       },
       animation: {
-        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        fadeInLeft2s: 'fadeInLeft 2s ease-in-out',
+        fadeInLeft: 'fadeInLeft 1s ease-in-out',
+        fadeInRight2s: 'fadeInRight 1s ease-in-out',
+        fadeInRight: 'fadeInRight 1s ease-in-out',
       },
       keyframes: {
-        'infinite-scroll': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-50%)' }, // Adjust to fit content width
+        fadeInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
-      },
-      width: {
-        'calc-250x14': 'calc(100px * 14)', // Adjust according to the number of slides
+        fadeInRight: {
+          '0%': { opacity: '0', transform: 'translateX(20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
       },
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',

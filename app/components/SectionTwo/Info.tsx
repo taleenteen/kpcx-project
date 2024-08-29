@@ -1,10 +1,11 @@
 import React from "react";
+import AnimatedCounter from "./AnimatedCounter";
 
 // Define interfaces for the data
 interface TopSectionItem {
   src: string;
   text: string;
-  value: string;
+  value: number;
 }
 
 interface BotSectionItem {
@@ -16,10 +17,10 @@ interface BotSectionItem {
 
 // Data for the top section
 const topSectionData: TopSectionItem[] = [
-  { src: "/WhyKPCX/revenue.png", text: "Revenue", value: "600%" },
-  { src: "/WhyKPCX/web-traffic.png", text: "Visitors", value: "900%" },
-  { src: "/WhyKPCX/deal.png", text: "Buyers", value: "900%" },
-  { src: "/WhyKPCX/viewer.png", text: "Page views", value: "900%" },
+  { src: "/WhyKPCX/revenue.png", text: "Revenue", value: 600 },
+  { src: "/WhyKPCX/web-traffic.png", text: "Visitors", value: 900 },
+  { src: "/WhyKPCX/deal.png", text: "Buyers", value: 900 },
+  { src: "/WhyKPCX/viewer.png", text: "Page views", value: 900 },
 ];
 
 // Data for the bottom section
@@ -55,7 +56,7 @@ const Info: React.FC = () => {
   return (
     <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
       <div className="flex flex-col md:flex-row mt-8">
-        <h2 className="text-4xl tracking-tight font-bold text-primary-800 text-center md:mr-8 mb-6 md:mb-0">
+        <h2 className="text-4xl tracking-tight font-bold text-primary-800 text-center md:mr-8 mb-6 md:mb-0 animate-fadeInLeft">
           Why KPCX?
         </h2>
 
@@ -63,13 +64,17 @@ const Info: React.FC = () => {
           {topSectionData.map(({ src, text, value }, index) => (
             <div key={index} className="w-full sm:w-1/2 mb-4 px-2">
               <div className="h-full py-4 px-6">
-                <div className="mb-4 flex justify-center md:justify-start">
+                <div
+                  className={`mb-4 flex justify-center md:justify-start animate-fadeInLeft2s`}
+                >
                   <img src={src} className="w-32" alt={text} />
                 </div>
-                <h3 className="text-7xl font-bold text-md mb-6 text-black">
-                  {value}
+                <h3
+                  className={`text-7xl font-bold text-md mb-6 text-black animate-fadeInRight`}
+                >
+                  <AnimatedCounter from={0} to={value} /> %
                 </h3>
-                <p className="text-2xl">{text}</p>
+                <p className={`text-2xl animate-fadeInRight`}>{text}</p>
               </div>
             </div>
           ))}
@@ -81,7 +86,7 @@ const Info: React.FC = () => {
           {botSectionData.map(({ src, heading, strong, content }, index) => (
             <div
               key={index}
-              className="lg:p-4 md:p-4 lg:w-1/4 sm:w-1/2 sm:p-12"
+              className="lg:p-4 md:p-4 lg:w-1/4 sm:w-1/2 sm:p-12 animate-fadeInRight"
             >
               <div className="px-4 py-6 drop-shadow-sm transform transition duration-500 hover:scale-110 hover:drop-shadow-2xl">
                 <h1 className="font-bold text-center text-2xl text-gray1">

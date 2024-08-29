@@ -1,26 +1,57 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function BackgroundWithButton() {
+  const [isInView, setIsInView] = useState(false);
+  const textRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (textRef.current) {
+        const rect = textRef.current.getBoundingClientRect();
+        const isInViewport = rect.top >= 0 && rect.bottom <= window.innerHeight;
+        setIsInView(isInViewport);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run initially in case the element is already in view
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="relative w-[1200px] h-[821.25px] rounded-[30px] overflow-hidden">
+    <div className="relative w-[1200px] h-[821.25px] rounded-[30px] bg-white">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center rounded-[30px] bg-fixed"
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
         }}
       >
-        <div className="absolute inset-0  bg-black bg-opacity-25">
-          {/* Make background black opacity */}
-        </div>
+        <div className="absolute inset-0 bg-black rounded-[30px] bg-opacity-25"></div>
 
         <div className="flex flex-col items-start justify-center h-full p-8 drop-shadow-2xl">
-          <div>
-            <h1 className="text-5xl font-bold text-white">
+          <div ref={textRef}>
+            <h1
+              className={`text-5xl font-bold text-white transition-all duration-500 ${
+                isInView
+                  ? "opacity-100 transform translate-x-0"
+                  : "opacity-0 transform -translate-x-10"
+              }`}
+            >
               Make E-commerce <br /> simple and accesible
             </h1>
-            <p className="mt-4 text-xl font-medium text-white">
+            <p
+              className={`mt-4 text-xl font-medium text-white transition-all duration-500 ${
+                isInView
+                  ? "opacity-100 transform translate-x-0"
+                  : "opacity-0 transform translate-x-10"
+              }`}
+            >
               Unlock your E-commerce potential with KPCX&#44; a one-stop <br />
               service solution to all things E-commerce.
             </p>
@@ -30,9 +61,8 @@ export default function BackgroundWithButton() {
       <div></div>
       <div className="absolute w-[60px] h-[60px] bg-transparent bottom-0 right-[215px] rounded-[30px] z-3 shadow-[30px_30px_0px_rgba(255,255,255,1)]"></div>
       <div className="absolute w-[60px] h-[60px] bg-transparent bottom-24 right-0 rounded-[30px] z-3 shadow-[30px_30px_0px_rgba(255,255,255,1)]"></div>
-      <div className="absolute w-[60px] h-[60px] bg-white bottom-0 right-0 rounded-[30px] z-1 shadow-[30px_30px_0px_rgba(255,255,255,1)]"></div>
+
       <div className="absolute bottom-0 right-0 h-[96px] w-[215px] z-2 bg-white rounded-tl-[50px]">
-        {" "}
         <div className="flex justify-center items-center h-full">
           <Link href="/contact" passHref>
             <button className="group lg:flex w-48 text-white font-bold h-20 items-center justify-center rounded-full duration-500 bg-gradient-to-tl from-blue2 via-indigo-500 to-blue1 bg-size-200 bg-pos-0 hover:bg-pos-100">
