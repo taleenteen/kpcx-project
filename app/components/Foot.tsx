@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   FaFacebookF,
   FaTwitter,
@@ -17,7 +18,13 @@ const Foot: React.FC = () => {
         <footer className="p-4 rounded-lg drop-shadow-2xl md:px-6 md:py-8">
           <div className="flex flex-col sm:flex-row sm:justify-between items-center">
             <div className="flex items-center mb-4 sm:mb-0">
-              <img src={logo} className="mr-4 h-10" alt="KPCX Company" />
+              <Image
+                src={logo}
+                width={40}
+                height={40}
+                className="mr-4 h-10"
+                alt="KPCX Company"
+              />
               <span className="self-center text-2xl font-semibold text-white">
                 KPCX
               </span>

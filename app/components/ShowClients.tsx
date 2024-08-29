@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 const InfiniteScrollLogos: React.FC = () => {
@@ -36,7 +37,13 @@ const InfiniteScrollLogos: React.FC = () => {
               key={index}
               className="flex pr-10 flex-col justify-center items-center h-[100px] mx-5"
             >
-              <img src={image.src} alt={image.alt} className="w-[100px]" />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={100}
+                height={100}
+                className="w-[100px]"
+              />
             </div>
           ))}
         </Marquee>

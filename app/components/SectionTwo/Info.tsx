@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import AnimatedCounter from "./AnimatedCounter";
 
 // Define interfaces for the data
@@ -67,7 +68,13 @@ const Info: React.FC = () => {
                 <div
                   className={`mb-4 flex justify-center md:justify-start animate-fadeInLeft2s`}
                 >
-                  <img src={src} className="w-32" alt={text} />
+                  <Image
+                    src={src}
+                    width={128}
+                    height={128}
+                    className="w-32"
+                    alt={text}
+                  />
                 </div>
                 <h3
                   className={`text-7xl font-bold text-md mb-6 text-black animate-fadeInRight`}
@@ -93,7 +100,13 @@ const Info: React.FC = () => {
                   {heading}
                 </h1>
                 <div className="flex justify-center my-6">
-                  <img src={src} alt={heading} className="w-36" />
+                  <Image
+                    src={src}
+                    width={144}
+                    height={144}
+                    alt={heading}
+                    className="w-36"
+                  />
                 </div>
                 <h2 className="font-regular text-start text-lg text-gray-200">
                   <strong className="drop-shadow-2xl">{strong}</strong>{" "}

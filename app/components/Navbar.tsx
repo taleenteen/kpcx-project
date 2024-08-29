@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 function Navbar() {
@@ -37,10 +38,12 @@ function Navbar() {
           <div className="flex flex-grow items-center justify-between bg-white rounded-full">
             <div className="h-[80px] w-[150px]">
               <Link href="/" passHref>
-                <img
-                  src="Logo.png"
+                <Image
+                  src="/Logo.png"
                   alt="Logo"
-                  className="w-full h-full object-contain"
+                  width={150}
+                  height={80}
+                  className="object-contain"
                 />
               </Link>
             </div>

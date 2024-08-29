@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
-export default function BackgroundWithButton() {
+export default function Hero() {
   const [isInView, setIsInView] = useState(false);
   const textRef = useRef<HTMLDivElement | null>(null);
 

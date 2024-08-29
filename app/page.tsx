@@ -1,4 +1,4 @@
-import FramerSection from "./components/Framer";
+import Hero from "./components/Hero";
 import ShowClients from "./components/ShowClients";
 import Info from "./components/SectionTwo/Info";
 import ServiceMap from "./components/SectionFour/ServiceMap";
@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <section className="p-4 mt-24">
         <div className="flex items-center justify-center">
-          <FramerSection />
+          <Hero />
         </div>
       </section>
 

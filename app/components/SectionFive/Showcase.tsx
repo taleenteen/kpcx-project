@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import sliderData from "../../data/slider-data.json"; // Adjust path as needed
@@ -35,10 +36,12 @@ const Showcase: React.FC = () => {
               >
                 <div className="lg:w-1/3 flex flex-col items-center lg:items-start mb-4 lg:mb-0">
                   <div className="w-32 h-32 overflow-hidden rounded-full">
-                    <img
+                    <Image
                       src={slide.image}
                       alt={slide.title}
-                      className="w-full h-full object-cover transform scale-[3.3]"
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <h2 className="text-2xl font-bold mt-4 text-center lg:text-left">

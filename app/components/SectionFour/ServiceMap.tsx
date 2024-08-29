@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const ServiceMap = () => {
   const mindmap = {
@@ -52,9 +53,11 @@ const ServiceMap = () => {
       </h1>
 
       <div className="max-w-6xl mb-12 hidden md:block">
-        <img
+        <Image
           src={mindmap.picture}
           alt="Service Map"
+          width={1920}
+          height={1080}
           className="w-full h-auto"
         />
       </div>

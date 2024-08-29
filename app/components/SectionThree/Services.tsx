@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useCallback, useMemo } from "react";
+import Image from "next/image";
 
 interface Service {
   id: number;
@@ -64,9 +65,11 @@ const ServiceCard: React.FC<ServiceCardProps> = React.memo(
           : "border-gray-200 text-black hover:bg-blue-600"
       }`}
     >
-      <img
+      <Image
         src={service.icon}
         alt={service.title}
+        width={75}
+        height={75}
         className="rounded-md mb-2 w-[75px] h-[75px]"
       />
       <h3
@@ -114,9 +117,11 @@ const ServiceSection: React.FC = () => {
         </div>
 
         <div className="w-full md:w-1/2 p-4 bg-white border border-gray-200 rounded-3xl shadow-md relative ">
-          <img
+          <Image
             src={selectedService.image}
             alt={selectedService.title}
+            width={320} // Adjusted based on "max-h-80" (320px height)
+            height={320}
             className="rounded-xl mb-2 transition-transform duration-300 ease-in-out transform w-full max-h-80 object-cover"
           />
 
