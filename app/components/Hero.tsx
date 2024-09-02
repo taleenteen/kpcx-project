@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-[1300px] h-screen xs:h-[450px] sm:h-[600px] md:h-[750px] mx-auto rounded-[30px] bg-white">
+    <div className="relative w-full max-w-[1300px] h-screen xs:h-[450px] md:h-[600px] xl:h-[700px] mx-auto rounded-[30px] bg-white">
       <div
         className="absolute inset-0 bg-cover bg-center rounded-[30px] "
         style={{

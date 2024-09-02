@@ -80,7 +80,8 @@ const Info: React.FC = () => {
                   <h3
                     className={`text-6xl font-bold text-md mb-6 text-black animate-fadeInRight`}
                   >
-                    <AnimatedCounter from={0} to={value} /> %
+                    <AnimatedCounter from={0} to={value} />
+                    <span className="text-5xl font-bold">%</span>
                   </h3>
                   <p
                     className={`text-2xl text-blue2 uppercase font-bold animate-fadeInRight`}
@@ -94,7 +95,7 @@ const Info: React.FC = () => {
         </div>
       </div>
 
-      <div className="container px-2 py-12 mx-auto">
+      <div className="container px-2  mx-auto">
         <div className="flex flex-wrap text-center justify-center">
           {botSectionData.map(({ src, heading, strong, content }, index) => (
             <div

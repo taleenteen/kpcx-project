@@ -110,7 +110,7 @@ const ServiceSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="w-full md:w-1/2 p-4 bg-whitebg border border-white rounded-3xl shadow-md relative ">
+        <div className="w-full md:w-1/2 p-4 bg-whitebg border border-white rounded-3xl shadow-md relative aspect-auto">
           <Image
             src={selectedService.image}
             alt={selectedService.title}
