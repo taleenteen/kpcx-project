@@ -92,10 +92,10 @@ const Foot: React.FC = () => {
             </li>
             <li>
               <a
-                href="#Channels"
+                href="#Benefits"
                 className="mr-4 text-sm text-gray-400 hover:text-white md:mr-6"
               >
-                Channels
+                Benefits
               </a>
             </li>
             <li>

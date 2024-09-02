@@ -48,7 +48,7 @@ const ServiceMap = () => {
 
   return (
     <div className="p-5 flex flex-col items-center justify-center">
-      <h1 className="text-2xl md:text-4xl font-bold text-black drop-shadow-2xl mb-8 text-center">
+      <h1 className="text-2xl md:text-4xl font-bold text-black drop-shadow-2xl mb-14 text-center">
         Benefits to Clients from Using Our Service
       </h1>
 

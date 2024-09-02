@@ -17,24 +17,23 @@ export default function Home() {
           <Hero />
         </div>
       </section>
+      <section>
+        <ShowClients />
+      </section>
 
-      <section id="About" className="bg-gradient-to-b from-white to-blue1">
+      <section id="About">
         <Info />
       </section>
-      <section id="Services" className="bg-blue1">
+      <section id="Services">
         <ServiceSection />
       </section>
 
-      <section id="Channels" className="bg-gray1">
+      <section id="Benefits">
         <ServiceMap />
       </section>
 
       <section>
         <ShowCase />
-      </section>
-
-      <section className="mb-12">
-        <ShowClients />
       </section>
 
       <section id="Faq">

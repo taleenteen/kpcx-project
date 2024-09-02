@@ -32,7 +32,7 @@ const Showcase: React.FC = () => {
             {sliderData.map((slide) => (
               <div
                 key={slide.id}
-                className="flex-shrink-0 w-full flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between bg-white p-8 lg:p-16"
+                className="flex-shrink-0 w-full flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between bg-whitebg p-8 lg:p-16"
               >
                 <div className="lg:w-1/3 flex flex-col items-center lg:items-start mb-4 lg:mb-0">
                   <div className="w-32 h-32 overflow-hidden rounded-full">
@@ -51,7 +51,7 @@ const Showcase: React.FC = () => {
 
                 <div className="relative lg:w-2/3 flex-grow text-center lg:text-left">
                   <RiDoubleQuotesL className="absolute -top-9 -left-5 text-3xl" />
-                  <p className="text-lg font-semibold">{slide.content}</p>
+                  <p className="text-lg">{slide.content}</p>
                   <RiDoubleQuotesR className="absolute -bottom-9 -right-5 text-3xl" />
                 </div>
               </div>
@@ -62,13 +62,13 @@ const Showcase: React.FC = () => {
         <div className="flex justify-end mt-4 gap-4">
           <button
             onClick={handlePrev}
-            className="p-4 bg-blue1 text-white text-xl rounded-full transition-transform hover:opacity-85 active:scale-95"
+            className="p-4 bg-blue2 text-white text-xl rounded-full transition-transform hover:opacity-85 active:scale-95"
           >
             <FaArrowLeft />
           </button>
           <button
             onClick={handleNext}
-            className="p-4 bg-blue1 text-white text-xl rounded-full transition-transform hover:opacity-85 active:scale-95"
+            className="p-4 bg-blue2 text-white text-xl rounded-full transition-transform hover:opacity-85 active:scale-95"
           >
             <FaArrowRight />
           </button>

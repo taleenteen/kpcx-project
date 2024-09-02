@@ -23,7 +23,7 @@ function ContactPage() {
       <section>
         <Banner />
       </section>
-      <section className="bg-gray1">
+      <section>
         <ContactForm />
       </section>
     </div>

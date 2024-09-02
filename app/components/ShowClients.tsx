@@ -24,11 +24,12 @@ const InfiniteScrollLogos: React.FC = () => {
   ];
 
   return (
-    <section className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
-      <div className="h-[100px] w-full">
+    <section className="max-w-screen-2xl mx-auto mt-14 px-4  lg:px-6">
+      <div className="h-[150px] w-full">
         <Marquee
           gradient
-          gradientWidth={20}
+          gradientWidth={40}
+          gradientColor="rgba(246, 246, 246, 1)"
           pauseOnHover={true}
           className="overflow-hidden w-full"
         >
@@ -40,8 +41,8 @@ const InfiniteScrollLogos: React.FC = () => {
               <Image
                 src={image.src}
                 alt={image.alt}
-                width={100}
-                height={100}
+                width={150}
+                height={150}
                 className="w-[100px]"
               />
             </div>

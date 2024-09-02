@@ -35,25 +35,25 @@ const Accordion: React.FC = () => {
   };
 
   return (
-    <div className="bg-blue1">
+    <div>
       <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
         <div className="flex justify-center">
-          <h1 className="text-3xl text-white font-bold mb-8">
+          <h1 className="text-3xl  font-bold mb-8">
             Frequently Asked Questions
           </h1>
         </div>
         {faqItems.map((item, index) => (
-          <div key={index} className="py-4 border-b border-white">
+          <div key={index} className="py-4 border-b border-black">
             <button
               onClick={() => toggleAccordion(index)}
               className="flex justify-start items-center w-full"
             >
-              <span className="text-white text-2xl font-bold flex-1 text-left hover:text-black transition-all duration-300">
+              <span className=" text-2xl font-bold flex-1 text-left hover:text-blue2 transition-all duration-300">
                 {item.title}
               </span>
 
               <svg
-                className="fill-white shrink-0 ml-4"
+                className="fill-black shrink-0 ml-4"
                 width="16"
                 height="16"
                 xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ const Accordion: React.FC = () => {
               </svg>
             </button>
             <div
-              className={`grid overflow-hidden transition-all duration-300 ease-in-out text-white text-sm ${
+              className={`grid overflow-hidden transition-all duration-300 ease-in-out  text-sm ${
                 accordionOpen === index
                   ? "grid-rows-[1fr] opacity-100"
                   : "grid-rows-[0fr] opacity-0"

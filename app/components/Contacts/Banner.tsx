@@ -15,7 +15,7 @@ function Banner() {
         className="relative bg-cover bg-center h-96 w-full flex items-center justify-center rounded-3xl overflow-hidden bg-fixed"
         style={{ backgroundImage: `url(${img})` }}
       >
-        <div className="bg-blue1 bg-opacity-90 p-8 rounded-3xl text-center text-white">
+        <div className="bg-blue2 bg-opacity-90 p-8 rounded-3xl text-center text-white">
           <h1 className="text-4xl font-bold mb-4">{info.title}</h1>
           <p className="whitespace-pre-line">{info.content}</p>
         </div>

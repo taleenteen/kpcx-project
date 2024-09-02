@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '400px',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -17,6 +20,7 @@ const config: Config = {
         gray1: '#E2E2E2',
         blue1: '#6C3BAA',
         blue2: '#3e17ff',
+        whitebg: '#F6F6F6'
       },
       animation: {
         fadeInLeft2s: 'fadeInLeft 2s ease-in-out',

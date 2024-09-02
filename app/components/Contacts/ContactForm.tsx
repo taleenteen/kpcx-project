@@ -163,14 +163,14 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} className="max-w-screen-md w-full">
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
-            <h1 className="text-5xl font-bold text-blue1">Contact us</h1>
+            <h1 className="text-5xl font-bold text-blue2">Contact us</h1>
 
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               {/* First Name */}
               <div className="sm:col-span-3">
                 <label
                   htmlFor="firstName"
-                  className="block text-sm font-medium leading-6 text-blue1"
+                  className="block text-sm font-medium leading-6 text-blue2"
                 >
                   First name
                 </label>
@@ -186,7 +186,7 @@ export default function ContactForm() {
                     onBlur={() =>
                       setTouched((prev) => ({ ...prev, firstName: true }))
                     }
-                    className="block w-full p-4 border-b-2 border-blue1 focus:border-indigo-600 rounded py-1.5 text-blue1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block w-full p-4 border-b-2 border-blue2 focus:border-indigo-600 rounded py-1.5 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   />
                   {errors.firstName && touched.firstName && (
                     <p className="text-red-500 text-sm mt-1">
@@ -200,7 +200,7 @@ export default function ContactForm() {
               <div className="sm:col-span-3">
                 <label
                   htmlFor="lastName"
-                  className="block text-sm font-medium leading-6 text-blue1"
+                  className="block text-sm font-medium leading-6 text-blue2"
                 >
                   Last name
                 </label>
@@ -216,7 +216,7 @@ export default function ContactForm() {
                     onBlur={() =>
                       setTouched((prev) => ({ ...prev, lastName: true }))
                     }
-                    className="block w-full p-4 border-b-2 border-blue1 focus:border-indigo-600 rounded py-1.5 text-blue1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block w-full p-4 border-b-2 border-blue2 focus:border-indigo-600 rounded py-1.5 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   />
                   {errors.lastName && touched.lastName && (
                     <p className="text-red-500 text-sm mt-1">
@@ -230,7 +230,7 @@ export default function ContactForm() {
               <div className="sm:col-span-3">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium leading-6 text-blue1"
+                  className="block text-sm font-medium leading-6 text-blue2"
                 >
                   Email
                 </label>
@@ -246,7 +246,7 @@ export default function ContactForm() {
                     onBlur={() =>
                       setTouched((prev) => ({ ...prev, email: true }))
                     }
-                    className="block w-full p-4 border-b-2 border-blue1 focus:border-indigo-600 rounded py-1.5 text-blue1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block w-full p-4 border-b-2 border-blue2 focus:border-indigo-600 rounded py-1.5  placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   />
                   {errors.email && touched.email && (
                     <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -258,7 +258,7 @@ export default function ContactForm() {
               <div className="sm:col-span-3">
                 <label
                   htmlFor="phone"
-                  className="block text-sm font-medium leading-6 text-blue1"
+                  className="block text-sm font-medium leading-6 text-blue2"
                 >
                   Phone
                 </label>
@@ -275,7 +275,7 @@ export default function ContactForm() {
                       setTouched((prev) => ({ ...prev, phone: true }))
                     }
                     maxLength={10} // Limit input to 10 characters
-                    className="block w-full p-4 border-b-2 border-blue1 focus:border-indigo-600 rounded py-1.5 text-blue1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block w-full p-4 border-b-2 border-blue2 focus:border-indigo-600 rounded py-1.5  placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   />
                   {errors.phone && touched.phone && (
                     <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
@@ -287,7 +287,7 @@ export default function ContactForm() {
               <div className="col-span-full">
                 <label
                   htmlFor="position"
-                  className="block text-sm font-medium leading-6 text-blue1"
+                  className="block text-sm font-medium leading-6 text-blue2"
                 >
                   Position
                 </label>
@@ -300,7 +300,7 @@ export default function ContactForm() {
                     placeholder="Position"
                     value={formData.position}
                     onChange={handleChange}
-                    className="block w-full p-4 border-b-2 border-blue1 focus:border-indigo-600 rounded py-1.5 text-blue1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block w-full p-4 border-b-2 border-blue2 focus:border-indigo-600 rounded py-1.5  placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -309,7 +309,7 @@ export default function ContactForm() {
               <div className="col-span-full">
                 <label
                   htmlFor="company"
-                  className="block text-sm font-medium leading-6 text-blue1"
+                  className="block text-sm font-medium leading-6 text-blue2"
                 >
                   Company
                 </label>
@@ -322,7 +322,7 @@ export default function ContactForm() {
                     placeholder="Company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="block w-full p-4 border-b-2 border-blue1 focus:border-indigo-600 rounded py-1.5 text-blue1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block w-full p-4 border-b-2 border-blue2 focus:border-indigo-600 rounded py-1.5  placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -331,7 +331,7 @@ export default function ContactForm() {
               <div className="col-span-full">
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium leading-6 text-blue1"
+                  className="block text-sm font-medium leading-6 text-blue2"
                 >
                   Message
                 </label>
@@ -343,7 +343,7 @@ export default function ContactForm() {
                     placeholder="Your message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="block w-full p-4 border-b-2 border-blue1 focus:border-indigo-600 rounded py-1.5 text-blue1 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block w-full p-4 border-b-2 border-blue2 focus:border-indigo-600 rounded py-1.5  placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -352,7 +352,7 @@ export default function ContactForm() {
           <div className="flex gap-x-4">
             <button
               type="submit"
-              className="inline-block px-8 py-1.5 text-sm font-bold leading-6 text-white shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20 bg-blue1 hover:bg-indigo-800 rounded-full hover:shadow-2xl transition-all duration-300 ease-in-out"
+              className="inline-block px-8 py-1.5 text-sm font-bold leading-6 text-white shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20 bg-blue2 hover:bg-indigo-800 rounded-full hover:shadow-2xl transition-all duration-300 ease-in-out"
             >
               Submit
             </button>
