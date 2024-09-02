@@ -59,7 +59,7 @@ const Info: React.FC = () => {
       <h2 className="text-4xl tracking-tight font-bold text-primary-800 text-center md:mr-8 mb-6 md:mb-0 animate-fadeInLeft">
         Why KPCX?
       </h2>
-      <div className="flex flex-col md:flex-row mt-8">
+      <div className="flex flex-col md:flex-row">
         <div className="container px-2 py-12 mx-auto">
           <div className="flex flex-wrap text-center justify-center">
             {topSectionData.map(({ src, text, value }, index) => (
@@ -78,13 +78,13 @@ const Info: React.FC = () => {
                     />
                   </div>
                   <h3
-                    className={`text-6xl font-bold text-md mb-6 text-black animate-fadeInRight`}
+                    className={`text-6xl font-bold text-md mb-6 text-blue2 animate-fadeInRight`}
                   >
                     <AnimatedCounter from={0} to={value} />
                     <span className="text-5xl font-bold">%</span>
                   </h3>
                   <p
-                    className={`text-2xl text-blue2 uppercase font-bold animate-fadeInRight`}
+                    className={`text-2xl text-black uppercase font-bold animate-fadeInRight`}
                   >
                     {text}
                   </p>
