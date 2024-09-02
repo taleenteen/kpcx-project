@@ -31,7 +31,7 @@ export default function ContactForm() {
   useEffect(() => {
     const nameRegex = /^[a-zA-Zก-๙\s]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{0,10}$/;
+    const phoneRegex = /^[0-9]{10}$/;
 
     setErrors((prev) => ({
       ...prev,
@@ -51,9 +51,11 @@ export default function ContactForm() {
           : "Email must be a valid email address."
         : "Email is required.",
       phone: formData.phone
-        ? phoneRegex.test(formData.phone)
+        ? formData.phone.length < 10
+          ? "Phone number must be exactly 10 digits long."
+          : phoneRegex.test(formData.phone)
           ? ""
-          : "Phone number must contain only numbers and be no longer than 10 digits."
+          : "Phone number must contain only numbers."
         : "Phone number is required.",
     }));
   }, [formData]);
@@ -64,10 +66,11 @@ export default function ContactForm() {
     const { name, value } = e.target;
 
     if (name === "phone") {
-      if (value.length <= 10) {
+      const numericValue = value.replace(/[^0-9]/g, ""); // ลบอักขระที่ไม่ใช่ตัวเลข
+      if (numericValue.length <= 10) {
         setFormData({
           ...formData,
-          [name]: value,
+          [name]: numericValue,
         });
         setTouched((prev) => ({ ...prev, [name]: true }));
       }

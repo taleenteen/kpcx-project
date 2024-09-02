@@ -49,7 +49,7 @@ function Navbar() {
               </Link>
             </div>
             <div className="hidden lg:flex pr-14 gap-6 md:gap-9 lg:gap-14 items-center">
-              {["#About", "#Services", "#Benefits", "#Faq"].map((item) => (
+              {["#About", "#Services", "#Faq"].map((item) => (
                 <a
                   key={item}
                   href={item}

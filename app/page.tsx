@@ -28,7 +28,7 @@ export default function Home() {
         <ServiceSection />
       </section>
 
-      <section id="Benefits">
+      <section>
         <ServiceMap />
       </section>
 

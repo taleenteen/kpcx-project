@@ -91,14 +91,6 @@ const Foot: React.FC = () => {
               </a>
             </li>
             <li>
-              <a
-                href="#Benefits"
-                className="mr-4 text-sm text-gray-400 hover:text-white md:mr-6"
-              >
-                Benefits
-              </a>
-            </li>
-            <li>
               <a href="#Faq" className="text-sm text-gray-400 hover:text-white">
                 FAQ
               </a>
