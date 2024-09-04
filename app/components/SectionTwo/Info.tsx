@@ -56,7 +56,7 @@ const botSectionData: BotSectionItem[] = [
 const Info: React.FC = () => {
   return (
     <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
-      <h2 className="text-4xl tracking-tight font-bold text-primary-800 text-center md:mr-8 mb-6 md:mb-0 animate-fadeInLeft">
+      <h2 className="text-4xl tracking-tight font-bold text-primary-800 text-start md:mr-8 mb-6 md:mb-0 animate-fadeInLeft">
         Why KPCX?
       </h2>
       <div className="flex flex-col md:flex-row">
@@ -65,26 +65,17 @@ const Info: React.FC = () => {
             {topSectionData.map(({ src, text, value }, index) => (
               <div
                 key={index}
-                className="lg:p-4 md:p-4 lg:w-1/4 sm:w-1/2 sm:p-12 animate-fadeInLeft"
+                className="lg:p-4 md:p-4 lg:w-1/4 sm:w-1/2 w-full sm:p-12 animate-fadeInLeft"
               >
                 <div className="px-4 py-6 drop-shadow-sm transform transition duration-500 hover:scale-110 hover:drop-shadow-2xl">
-                  <div className="flex justify-center my-6">
-                    <Image
-                      src={src}
-                      width={128}
-                      height={128}
-                      className="w-32"
-                      alt={text}
-                    />
-                  </div>
                   <h3
-                    className={`text-6xl font-bold text-md mb-6 text-blue2 animate-fadeInRight`}
+                    className={`text-7xl xl:text-8xl font-bold text-md mb-6 text-start text-blue2 animate-fadeInRight`}
                   >
                     <AnimatedCounter from={0} to={value} />
                     <span className="text-5xl font-bold">%</span>
                   </h3>
                   <p
-                    className={`text-2xl text-black uppercase font-bold animate-fadeInRight`}
+                    className={`text-2xl text-black uppercase text-start font-bold animate-fadeInRight`}
                   >
                     {text}
                   </p>
@@ -112,7 +103,7 @@ const Info: React.FC = () => {
                     className="w-36"
                   />
                 </div>
-                <h1 className="font-bold text-center text-2xl my-4">
+                <h1 className="font-bold text-start text-2xl my-4">
                   {heading}
                 </h1>
                 <h2 className="font-regular text-start text-lg ">

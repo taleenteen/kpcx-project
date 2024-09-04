@@ -2,100 +2,51 @@ import React from "react";
 import Image from "next/image";
 
 const ServiceMap = () => {
-  const mindmap = {
-    picture: "/ServiceMap/Visual_Map.png",
-  };
-
-  const cards = [
-    {
-      title: "Streamline Operation",
-      description:
-        "We help our clients save costs and resources so they can focus on their core business activities, while we focus on helping them grow online.",
-    },
-    {
-      title: "Enhance E-Commerce Performance",
-      description:
-        "Leverage industry insights and data-driven marketing techniques to craft strategy that will boost store performance.",
-    },
-    {
-      title: "Optimize Return on Ad Spending (ROAS)",
-      description:
-        "Optimize ads spending for maximum impact. We make sure that your content is reaching the right audience, at the right place, and at the right time.",
-    },
-    {
-      title: "Exposures to Millions of Potential Customers",
-      description:
-        "Raise brand awareness through Co-Campaigns, features in multiple Merchant Pages (MCPs), and etc.",
-    },
-  ];
-
-  const infos = [
-    "Operation",
-    "Warehouse & Distribution",
-    "Campaign & Promotion Planning",
-    "Data Analysis",
-    "Investment",
-    "Product Owner",
-    "Managing Content",
-  ];
-
-  const results = [
-    "Operation",
-    "Warehouse & Distribution",
-    "Campaign & Promotion Planning",
-    "Data Analysis",
+  const items = [
+    { title: "Operation", img: "/ServiceMap/Operation.jpeg" },
+    { title: "Warehouse & Distribution", img: "/ServiceMap/Warehouse.jpg" },
+    { title: "Campaign Planning", img: "/ServiceMap/Campaign.jpeg" },
+    { title: "Data Analysis", img: "/ServiceMap/Data.jpeg" },
+    { title: "Investment", img: "/ServiceMap/Investment.jpeg" },
+    { title: "Product Owner", img: "/ServiceMap/Product.jpg" },
+    { title: "Managing Content", img: "/ServiceMap/Managing.jpeg" },
   ];
 
   return (
-    <div className="p-5 flex flex-col items-center justify-center">
-      <h1 className="text-2xl md:text-4xl font-bold text-black drop-shadow-2xl mb-14 text-center">
-        Benefits to Clients from Using Our Service
-      </h1>
-
-      <div className="max-w-6xl mb-12 hidden md:block">
-        <Image
-          src={mindmap.picture}
-          alt="Service Map"
-          width={1920}
-          height={1080}
-          className="w-full h-auto"
-        />
+    <div className="max-w-screen-2xl mx-auto mt-14 px-4 lg:px-6">
+      <div className="max-w-screen-xl mx-auto mt-14 px-4 lg:px-6 text-center md:text-left">
+        <h1 className="text-3xl md:text-4xl font-bold text-start">
+          Benefits To Clients From Using Our Service
+        </h1>
+        <h1 className="text-xl md:text-2xl mt-8 border-t-2 border-black pt-9 text-start">
+          The blue Highlight is remaining process when use our service
+        </h1>
       </div>
-
-      <div className="md:hidden w-full mb-12">
-        <h2 className="text-xl font-bold mb-4 text-center">
-          Without Our Service
-        </h2>
-        <div className="space-y-4">
-          {infos.map((info, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-lg font-medium text-black">{info}</h3>
-              <p className="text-gray-600">Description for {info}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="md:hidden w-full mb-12">
-        <h2 className="text-xl font-bold mb-4 text-center">With Our Service</h2>
-        <div className="space-y-4">
-          {results.map((result, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-lg font-medium text-black">{result}</h3>
-              <p className="text-gray-600">Description for {result}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-screen-xl">
-        {cards.map((card, index) => (
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-1 xl:gap-4 h-full p-4 md:h-96 my-12">
+        {items.map((item, index) => (
           <div
             key={index}
-            className="relative bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className={`relative group rounded-xl transition duration-500 ease-in-out transform hover:scale-105 ${
+              index < 4
+                ? "shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] shadow-blue2"
+                : "shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] shadow-gray-900"
+            } flex items-center justify-center `}
           >
-            <h3 className="text-xl font-bold text-blue2 mb-4">{card.title}</h3>
-            <p className="text-blue2 font-light">{card.description}</p>
+            {/* Background Image */}
+            <Image
+              src={item.img}
+              alt={item.title}
+              width={500}
+              height={500}
+              className="rounded-xl w-full h-full object-cover"
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-20 rounded-lg "></div>
+            {/* Text */}
+            <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 text-white drop-shadow-2xl text-center font-bold text-lg sm:text-lg">
+              <h1 className="drop-shadow-2xl shadow-white">{item.title}</h1>
+            </div>
           </div>
         ))}
       </div>

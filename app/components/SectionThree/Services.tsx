@@ -58,7 +58,7 @@ const ServiceCard: React.FC<ServiceCardProps> = React.memo(
       className={`cursor-pointer border rounded-3xl p-3 shadow-md hover:shadow-lg transition-all duration-300 ${
         selected
           ? "border-blue-400 bg-blue-50 text-blue2"
-          : "border-gray-200 hover:bg-blue-200"
+          : "border-gray-200 hover:bg-indigo-700"
       }`}
     >
       <Image
@@ -70,7 +70,7 @@ const ServiceCard: React.FC<ServiceCardProps> = React.memo(
       />
       <h3
         className={`text-2xl font-semibold mt-28 ${
-          selected ? "text-blue2" : "text-black"
+          selected ? "text-blue2" : "text-white"
         }`}
       >
         {service.title}
@@ -96,7 +96,9 @@ const ServiceSection: React.FC = () => {
   return (
     <div className="max-w-screen-xl mx-auto py-8 mb-2 lg:mb-24 px-1 lg:py-16 lg:px-6">
       <div>
-        <h1 className="font-bold text-4xl ml-5 mb-6">End-to-End Services</h1>
+        <h1 className="font-bold text-white text-4xl ml-5 mb-6">
+          End-to-End Services
+        </h1>
       </div>
       <div className="flex flex-col md:flex-row gap-8 p-4">
         <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-1/2">

@@ -14,7 +14,7 @@ const Contact = () => {
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="text-center text-white p-4">
             <h1 className="text-4xl font-bold mb-4">
-              Ready to elevate your business?
+              Ready To Elevate Your Business?
             </h1>
             <Link href="/contact" passHref>
               <button className="bg-gray-200 text-black font-bold py-2 px-4 rounded-3xl hover:bg-white transition-all ease-in-out duration-300 hover:scale-110">

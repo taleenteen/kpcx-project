@@ -7,6 +7,7 @@ import ShowCase from "./components/SectionFive/Showcase";
 import Contact from "./components/SectionSeven/Contact";
 import Accordion from "./components/SectionSix/Accordion";
 import Navbar from "./components/Navbar";
+import Map from "./components/SectionFour/Map";
 
 export default function Home() {
   return (
@@ -24,19 +25,22 @@ export default function Home() {
       <section id="About">
         <Info />
       </section>
-      <section id="Services">
+      <section id="Services" className="bg-blue2">
         <ServiceSection />
       </section>
 
       <section>
         <ServiceMap />
       </section>
+      <section>
+        <Map></Map>
+      </section>
 
       <section>
         <ShowCase />
       </section>
 
-      <section id="Faq">
+      <section id="Faq" className="bg-blue2">
         <Accordion />
       </section>
 

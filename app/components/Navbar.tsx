@@ -4,35 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 function Navbar() {
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  const handleScroll = useCallback(() => {
-    if (window.scrollY > lastScrollY) {
-      setShowNavbar(false);
-    } else {
-      setShowNavbar(true);
-    }
-    setLastScrollY(window.scrollY);
-  }, [lastScrollY]);
-
-  useEffect(() => {
-    const debounceScroll = () => {
-      handleScroll();
-    };
-    window.addEventListener("scroll", debounceScroll);
-
-    return () => {
-      window.removeEventListener("scroll", debounceScroll);
-    };
-  }, [handleScroll]);
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 transition-transform duration-300 z-20 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 transition-transform duration-300 z-20">
       <div className="flex justify-center">
         <div className="flex align-middle flex-row gap-[24px] py-6 px-14 w-full max-w-[1450px]">
           <div className="flex flex-grow items-center justify-between bg-whitebg rounded-full">
