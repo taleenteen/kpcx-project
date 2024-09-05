@@ -32,8 +32,7 @@ const Foot: React.FC = () => {
             <div className="flex flex-col sm:flex-row w-full sm:w-auto sm:justify-between">
               <div className="mb-6 sm:mb-0 sm:mr-8">
                 <h3 className="text-lg font-bold text-white mb-2">Contact</h3>
-                <p className="text-white text-sm">123-456-7890</p>
-                <p className="text-white text-sm">info@mysite.com</p>
+                <p className="text-white text-sm">pongphols@kpc-x.com</p>
                 <div className="flex space-x-4 mt-2">
                   <a
                     href="https://facebook.com"

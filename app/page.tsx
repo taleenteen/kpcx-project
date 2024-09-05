@@ -8,6 +8,7 @@ import Contact from "./components/SectionSeven/Contact";
 import Accordion from "./components/SectionSix/Accordion";
 import Navbar from "./components/Navbar";
 import Map from "./components/SectionFour/Map";
+import Carousel from "./components/SectionFour/Carousel";
 
 export default function Home() {
   return (
@@ -31,6 +32,9 @@ export default function Home() {
 
       <section>
         <ServiceMap />
+      </section>
+      <section className="block sm:hidden">
+        <Carousel />
       </section>
       <section>
         <Map></Map>

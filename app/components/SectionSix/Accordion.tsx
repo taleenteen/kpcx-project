@@ -26,7 +26,7 @@ const Accordion: React.FC = () => {
     {
       title: "How do we contact KPCX?",
       answer:
-        "You can get in touch with us by emailing the following email: Pending",
+        "You can get in touch with us by emailing the following email: pongphols@kpc-x.com",
     },
   ];
 
