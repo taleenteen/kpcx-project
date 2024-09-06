@@ -43,13 +43,15 @@ const Info: React.FC = () => {
       <div className="flex flex-col md:flex-row">
         <div className="container px-2 pb-14 mx-auto">
           <div className="flex justify-center items-center flex-col">
-            <div className="flex flex-row">
+            <div className="flex flex-col md:flex-row">
               {/* Mission Section */}
-              <div className="flex justify-center items-center border-dashed border-b-2 border-r-2 border-gray-300 p-8 w-1/4">
-                <h2 className="text-6xl font-bold text-blue2 ">Mission</h2>
+              <div className="flex justify-center items-center border-dashed lg:border-b-2 lg:border-r-2 border-gray-300 p-8 w-full md:w-1/4">
+                <h2 className="text-4xl md:text-6xl font-bold text-blue2">
+                  Mission
+                </h2>
               </div>
-              <div className="flex justify-center items-center border-dashed border-b-2 border-gray-300 p-8 w-3/4">
-                <p className="text-xl text-gray-800">
+              <div className="flex justify-center items-center border-dashed lg:border-b-2 border-gray-300 p-8 w-full md:w-3/4">
+                <p className="text-lg md:text-xl text-gray-800">
                   Empower retailers to unlock their potential and reach new
                   heights of success by
                   <span className="font-bold">
@@ -59,13 +61,15 @@ const Info: React.FC = () => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-col md:flex-row">
               {/* Vision Section */}
-              <div className="flex justify-center items-center border-dashed border-r-2 border-gray-300 p-8 w-1/4">
-                <h2 className="text-6xl font-bold text-blue2">Vision</h2>
+              <div className="flex justify-center items-center border-dashed lg:border-r-2 border-gray-300 p-8 w-full md:w-1/4">
+                <h2 className="text-4xl md:text-6xl font-bold text-blue2">
+                  Vision
+                </h2>
               </div>
-              <div className="flex justify-center items-center p-8 w-3/4">
-                <p className="text-xl text-gray-800">
+              <div className="flex justify-center items-center p-8 w-full md:w-3/4">
+                <p className="text-lg md:text-xl text-gray-800">
                   We aspire to
                   <span className="font-bold">
                     {" "}
@@ -80,6 +84,7 @@ const Info: React.FC = () => {
           </div>
         </div>
       </div>
+
       <h2 className="text-4xl tracking-tight font-bold text-primary-800 text-start md:mr-8 mb-6 md:mb-0 animate-fadeInLeft">
         Why KPCX?
       </h2>
