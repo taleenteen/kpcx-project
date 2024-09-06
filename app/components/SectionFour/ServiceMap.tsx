@@ -12,6 +12,9 @@ const ServiceMap = () => {
     { title: "Managing Content", img: "/ServiceMap/Managing.jpeg" },
   ];
 
+  const serviceContent =
+    "Blue underglow highlight the remaining process when use our service :";
+
   return (
     <div className="max-w-screen-xl mx-auto mt-14 px-4 lg:px-6">
       <div className="max-w-screen-xl mx-auto mt-14 px-4 lg:px-6 text-center md:text-left">
@@ -19,7 +22,7 @@ const ServiceMap = () => {
           Benefits To Clients From Using Our Service
         </h1>
         <h1 className="text-xl md:text-2xl mt-8 border-t-2 border-black pt-9 text-start">
-          The blue Highlight is remaining process when use our service
+          {serviceContent}
         </h1>
       </div>
       <div className="relative grid-cols-1 hidden sm:grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-1 xl:gap-4 h-full p-4 md:h-96 my-12">

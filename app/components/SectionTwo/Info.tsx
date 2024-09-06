@@ -1,13 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import AnimatedCounter from "./AnimatedCounter";
-
-// Define interfaces for the data
-interface TopSectionItem {
-  src: string;
-  text: string;
-  value: number;
-}
 
 interface BotSectionItem {
   src: string;
@@ -15,14 +7,6 @@ interface BotSectionItem {
   strong: string;
   content: string;
 }
-
-// Data for the top section
-const topSectionData: TopSectionItem[] = [
-  { src: "/WhyKPCX/revenue.png", text: "Revenue", value: 600 },
-  { src: "/WhyKPCX/web-traffic.png", text: "Visitors", value: 900 },
-  { src: "/WhyKPCX/deal.png", text: "Buyers", value: 900 },
-  { src: "/WhyKPCX/viewer.png", text: "Page views", value: 900 },
-];
 
 // Data for the bottom section
 const botSectionData: BotSectionItem[] = [
@@ -56,35 +40,49 @@ const botSectionData: BotSectionItem[] = [
 const Info: React.FC = () => {
   return (
     <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6">
-      <h2 className="text-4xl tracking-tight font-bold text-primary-800 text-start md:mr-8 mb-6 md:mb-0 animate-fadeInLeft">
-        Why KPCX?
-      </h2>
       <div className="flex flex-col md:flex-row">
-        <div className="container px-2 py-12 mx-auto">
-          <div className="flex flex-wrap text-center justify-center">
-            {topSectionData.map(({ src, text, value }, index) => (
-              <div
-                key={index}
-                className="lg:p-4 md:p-4 lg:w-1/4 sm:w-1/2 w-full sm:p-12 animate-fadeInLeft"
-              >
-                <div className="px-4 py-6 drop-shadow-sm transform transition duration-500 hover:scale-110 hover:drop-shadow-2xl">
-                  <h3
-                    className={`text-7xl xl:text-8xl font-bold text-md mb-6 text-start text-blue2 animate-fadeInRight`}
-                  >
-                    <AnimatedCounter from={0} to={value} />
-                    <span className="text-5xl font-bold">%</span>
-                  </h3>
-                  <p
-                    className={`text-2xl text-black uppercase text-start font-bold animate-fadeInRight`}
-                  >
-                    {text}
-                  </p>
-                </div>
+        <div className="container px-2 pb-14 mx-auto">
+          <div className="flex justify-center items-center flex-col">
+            <div className="flex flex-row">
+              {/* Mission Section */}
+              <div className="flex justify-center items-center border-dashed border-b-2 border-r-2 border-gray-300 p-8 w-1/4">
+                <h2 className="text-6xl font-bold text-blue2 ">Mission</h2>
               </div>
-            ))}
+              <div className="flex justify-center items-center border-dashed border-b-2 border-gray-300 p-8 w-3/4">
+                <p className="text-xl text-gray-800">
+                  Empower retailers to unlock their potential and reach new
+                  heights of success by
+                  <span className="font-bold">
+                    {" "}
+                    making e-commerce simple &amp; accessible
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-row">
+              {/* Vision Section */}
+              <div className="flex justify-center items-center border-dashed border-r-2 border-gray-300 p-8 w-1/4">
+                <h2 className="text-6xl font-bold text-blue2">Vision</h2>
+              </div>
+              <div className="flex justify-center items-center p-8 w-3/4">
+                <p className="text-xl text-gray-800">
+                  We aspire to
+                  <span className="font-bold">
+                    {" "}
+                    enable retailers to fully harness their online market
+                    potential
+                  </span>
+                  &nbsp;through innovative solutions, insightful strategies, and
+                  a collaborative approach
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <h2 className="text-4xl tracking-tight font-bold text-primary-800 text-start md:mr-8 mb-6 md:mb-0 animate-fadeInLeft">
+        Why KPCX?
+      </h2>
 
       <div className="container px-2  mx-auto">
         <div className="flex flex-wrap text-center justify-center">
