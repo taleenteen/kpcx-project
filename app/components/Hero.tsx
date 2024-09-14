@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import HeroImage from "../assets/images/hero/Hero.jpg"; // Path to your image
 
 export default function Hero() {
   const [isInView, setIsInView] = useState(false);
@@ -26,12 +27,12 @@ export default function Hero() {
   return (
     <div className="relative w-full max-w-[1300px] h-screen xs:h-[450px] md:h-[600px] xl:h-[700px] mx-auto rounded-[30px] bg-white">
       <div
-        className="absolute inset-0 bg-cover bg-center rounded-[30px] "
+        className="absolute inset-0 bg-cover bg-center rounded-[30px]"
         style={{
-          backgroundImage: "url(/Hero.jpg)",
+          backgroundImage: `url(${HeroImage.src})`, // Use the image here
         }}
       >
-        <div className="absolute  inset-0 bg-black rounded-[30px] bg-opacity-25"></div>
+        <div className="absolute inset-0 bg-black rounded-[30px] bg-opacity-25"></div>
 
         <div className="flex flex-col items-start justify-center h-full p-8 drop-shadow-2xl">
           <div ref={textRef}>
@@ -57,7 +58,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div></div>
+
       <div className="absolute w-[60px] h-[60px] bg-transparent bottom-0 right-[215px] rounded-[30px] z-3 shadow-[30px_30px_0px_rgba(246,246,246,1)]"></div>
       <div className="absolute w-[60px] h-[60px] bg-transparent bottom-24 right-0 rounded-[30px] z-3 shadow-[30px_30px_0px_rgba(246,246,246,1)]"></div>
 

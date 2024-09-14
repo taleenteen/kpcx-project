@@ -1,17 +1,23 @@
 import React from "react";
 import Image from "next/image";
+import OperationImage from "../../assets/images/ServiceMap/Operation.jpeg";
+import WarehouseImage from "../../assets/images/ServiceMap/Warehouse.jpg";
+import CampaignImage from "../../assets/images/ServiceMap/Campaign.jpeg";
+import DataImage from "../../assets/images/ServiceMap/Data.jpeg";
+import InvestmentImage from "../../assets/images/ServiceMap/Investment.jpeg";
+import ProductImage from "../../assets/images/ServiceMap/Product.jpg";
+import ManagingImage from "../../assets/images/ServiceMap/Managing.jpeg";
 
 const ServiceMap = () => {
   const items = [
-    { title: "Operation", img: "/ServiceMap/Operation.jpeg" },
-    { title: "Warehouse & Distribution", img: "/ServiceMap/Warehouse.jpg" },
-    { title: "Campaign Planning", img: "/ServiceMap/Campaign.jpeg" },
-    { title: "Data Analysis", img: "/ServiceMap/Data.jpeg" },
-    { title: "Investment", img: "/ServiceMap/Investment.jpeg" },
-    { title: "Product Owner", img: "/ServiceMap/Product.jpg" },
-    { title: "Managing Content", img: "/ServiceMap/Managing.jpeg" },
+    { title: "Operation", img: OperationImage.src },
+    { title: "Warehouse & Distribution", img: WarehouseImage.src },
+    { title: "Campaign Planning", img: CampaignImage.src },
+    { title: "Data Analysis", img: DataImage.src },
+    { title: "Investment", img: InvestmentImage.src },
+    { title: "Product Owner", img: ProductImage.src },
+    { title: "Managing Content", img: ManagingImage.src },
   ];
-
   const serviceContent =
     "Blue underglow highlight the remaining process when use our service :";
 

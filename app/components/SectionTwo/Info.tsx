@@ -1,5 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Image14 from "../../assets/images/WhyKPCX/14.png";
+import Image15 from "../../assets/images/WhyKPCX/15.png";
+import Image16 from "../../assets/images/WhyKPCX/16.png";
+import Image17 from "../../assets/images/WhyKPCX/17.png";
 
 interface BotSectionItem {
   src: string;
@@ -8,29 +12,29 @@ interface BotSectionItem {
   content: string;
 }
 
-// Data for the bottom section
+// Define botSectionData array with imported images
 const botSectionData: BotSectionItem[] = [
   {
-    src: "/WhyKPCX/14.png",
+    src: Image14.src, // Use the imported image as src
     heading: "Comprehensive Solutions",
     strong: "Seamless End-to-End service",
     content: "covering all aspects of online activation",
   },
   {
-    src: "/WhyKPCX/15.png",
+    src: Image15.src,
     heading: "Customizable Strategies",
     strong: "Data-driven strategies",
     content:
       "specifically tailored to meet unique goals and challenges for each business",
   },
   {
-    src: "/WhyKPCX/16.png",
+    src: Image16.src,
     heading: "Advanced Analytics & Reporting",
     strong: "Leverage cutting-edge technology and real-time reporting",
     content: "to track campaign effectiveness",
   },
   {
-    src: "/WhyKPCX/17.png",
+    src: Image17.src,
     heading: "Trusted By Leading Brands",
     strong: "Delivering results and expertise",
     content: "through experience of working with numerous world-class brands",

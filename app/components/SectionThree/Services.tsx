@@ -1,6 +1,17 @@
 "use client";
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
+// Import images
+import StoreImage from "../../assets/images/MainServices/Store.jpg";
+import CampaignImage from "../../assets/images/MainServices/Campaign.jpg";
+import DataAnalysisImage from "../../assets/images/MainServices/Data-Analys.jpg";
+import FulfillmentImage from "../../assets/images/MainServices/Fulfillment.jpg";
+
+// Import icons
+import DataCollectionIcon from "../../assets/images/Services/data-collection.png";
+import PlanningIcon from "../../assets/images/Services/planning.png";
+import GearIcon from "../../assets/images/Services/gear.png";
+import FulfillmentIcon from "../../assets/images/Services/fulfillment.png";
 
 interface Service {
   id: number;
@@ -10,38 +21,39 @@ interface Service {
   icon: string;
 }
 
+// Define services array with imported images and icons
 const services: Service[] = [
   {
     id: 1,
     title: "Store Operation",
     description:
       "Our team ensures efficient store setup and campaign launches, enhancing your online presence through targeted digital marketing and streamlined operational support.",
-    image: "/MainServices/Store.jpg",
-    icon: "/Services/data-collection.png",
+    image: StoreImage.src,
+    icon: DataCollectionIcon.src,
   },
   {
     id: 2,
     title: "Campaign Planning",
     description:
       "We develop comprehensive marketing strategies that align with your business goals and drive customer engagement.",
-    image: "/MainServices/Campaign.jpg",
-    icon: "/Services/planning.png",
+    image: CampaignImage.src,
+    icon: PlanningIcon.src,
   },
   {
     id: 3,
     title: "Data Analysis",
     description:
       "Gain valuable insights into customer behavior and market trends through our advanced analytics services.",
-    image: "/MainServices/Data-Analys.jpg",
-    icon: "/Services/gear.png",
+    image: DataAnalysisImage.src,
+    icon: GearIcon.src,
   },
   {
     id: 4,
     title: "Fulfillment Service",
     description:
       "We create high-quality content that resonates with your audience and amplifies your brand message.",
-    image: "/MainServices/Fulfillment.jpg",
-    icon: "/Services/fulfillment.png",
+    image: FulfillmentImage.src,
+    icon: FulfillmentIcon.src,
   },
 ];
 
@@ -50,7 +62,7 @@ interface ServiceCardProps {
   selected: boolean;
   onClick: () => void;
 }
-// Use service memo for protect re-render
+
 const ServiceCard: React.FC<ServiceCardProps> = React.memo(
   ({ service, selected, onClick }) => (
     <div
@@ -81,7 +93,7 @@ const ServiceCard: React.FC<ServiceCardProps> = React.memo(
 
 const ServiceSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const selectedService = useMemo(() => services[currentIndex], [currentIndex]);
+  const [selectedService, setSelectedService] = useState<Service>(services[0]);
 
   const handleNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
@@ -92,6 +104,11 @@ const ServiceSection: React.FC = () => {
       (prevIndex) => (prevIndex - 1 + services.length) % services.length
     );
   }, []);
+
+  useEffect(() => {
+    // Update selectedService whenever currentIndex changes
+    setSelectedService(services[currentIndex]);
+  }, [currentIndex]);
 
   return (
     <div className="max-w-screen-xl mx-auto py-8 mb-2 lg:mb-24 px-1 lg:py-16 lg:px-6">

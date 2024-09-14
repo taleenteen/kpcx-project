@@ -3,12 +3,42 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-import sliderData from "../../data/slider-data.json"; // Adjust path as needed
+
+// Import images
+import McGarrettImage from "../../assets/images/ShowCaseClient/McGarrett.png";
+import BrookImage from "../../assets/images/ShowCaseClient/Brook.png";
+import MICAImage from "../../assets/images/ShowCaseClient/MICA.png";
 
 const Showcase: React.FC = () => {
+  // Define slider data
+  const sliderData = [
+    {
+      id: 1,
+      title: "McGarrett",
+      content:
+        "Through KPCX's expertise, we've successfully expanded our McGarrett brand's online presence. Their comprehensive ecommerce solutions have not only boosted our digital sales but have also provided valuable insights into consumer behavior. This data-driven approach has allowed us to make informed decisions and enhance our overall business performance.",
+      image: McGarrettImage.src,
+    },
+    {
+      id: 2,
+      title: "BROOK",
+      content:
+        "KPCX has been instrumental in propelling our Brooks brand to new heights. Their data-driven strategies and deep understanding of the FMCG market have enabled us to identify untapped opportunities, optimize our product mix, and significantly increase our market share. Their tailored campaigns have resonated strongly with our target audience, driving substantial sales growth and brand loyalty.",
+      image: BrookImage.src,
+    },
+    {
+      id: 3,
+      title: "MICA",
+      content:
+        "KPCX's ability to extract meaningful insight from complex data has been a game-changer for our Mica's brand. Their data-driven approach has helped us uncover hidden trends, optimize pricing strategies, and improve product assortment. By leveraging their analytics, we've been able to make data-informed decisions that have directly impacted our bottom line.",
+      image: MICAImage.src,
+    },
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalSlides = sliderData.length;
-  //Handle buttons
+
+  // Handle buttons
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
   };
